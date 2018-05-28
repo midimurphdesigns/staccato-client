@@ -1,5 +1,3 @@
-Staccato music learning app
+Staccato music theory learning app
 
-front end - Kevin Murphy
-
-back end - Jacob Zimmerman
+By Jacob Zimmerman and Kevin Murphy
