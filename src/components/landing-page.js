@@ -13,7 +13,7 @@ export function LandingPage(props) {
 
     return (
         <div className="home">
-            <div className="welcome-login-container row">
+            <div className="welcome-login-container row col-12">
                 <section className="title-section col-6">
                     <h3>Welcome to...</h3>
                     <h1>Staccato</h1>
@@ -26,7 +26,7 @@ export function LandingPage(props) {
                 </section>
             </div>
 
-            <div className="row">
+            <div className="row col-12">
                 <section className="info-block col-3">
                     <label>Expand your music theory through...</label>
                     <h3>Space repetition!</h3>

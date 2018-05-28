@@ -6,6 +6,26 @@ body {
   font-family: sans-serif;
 }
 
+/* FORMS */
+
+input {
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 18px;
+  padding: 10px;
+}
+
+form {
+  
+}
+
+button {
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+}
+
 
 
 
