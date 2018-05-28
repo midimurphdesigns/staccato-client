@@ -1,0 +1,19 @@
+.welcome-login-container, .title-section, .login {
+  /* width: 100%; */
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-evenly;
+
+}
+
+.title-section {
+  /* float: right; */
+}
+
+.info-block {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  /* display: flex; */
+  /* justify-content: center; */
+}
