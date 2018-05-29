@@ -1,19 +1,37 @@
-.welcome-login-container, .title-section, .login {
-  /* width: 100%; */
-  display: flex;
+.home {
+  /* display: flex; */
   /* flex-direction: row; */
-  justify-content: space-evenly;
-
 }
 
 .title-section {
-  /* float: right; */
+  text-align: center;
+}
+
+.welcome-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+
+}
+
+.info-section {
+  padding-top: 100px;
+  margin: auto;
 }
 
 .info-block {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
   padding: 20px;
-  /* display: flex; */
-  /* justify-content: center; */
+}
+
+.center-info-block {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }
