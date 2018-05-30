@@ -1,39 +1,43 @@
 import React from 'react';
 
-export default class Input extends React.Component {
-    componentDidUpdate(prevProps) {
-        if (!prevProps.meta.active && this.props.meta.active) {
-            this.input.focus();
-        }
+import { fetchQuestion } from '../actions/questions';
+
+class Input extends React.Component {
+    componentDidMount() {
+        this.props.dispatch(fetchQuestion());
     }
 
     render() {
-        let error;
-        if (this.props.meta.touched && this.props.meta.error) {
-            error = <div className="form-error">{this.props.meta.error}</div>;
-        }
-
-        let warning;
-        if (this.props.meta.touched && this.props.meta.warning) {
-            warning = (
-                <div className="form-warning">{this.props.meta.warning}</div>
-            );
-        }
 
         return (
-            <div className="form-input">
-                <label htmlFor={this.props.input.name}>
+            <form className="form-input" onSubmit={(e) => {
+                e.preventDefault();
+                //dispatch to backend...
+                this.props.dispatch(fetchQuestion(e.target.input.value));
+                console.log(e.target.input.value);
+            }}>
+                <label htmlFor="input">
                     {this.props.label}
                     {error}
                     {warning}
                 </label>
                 <input
-                    {...this.props.input}
-                    id={this.props.input.name}
-                    type={this.props.type}
-                    ref={input => (this.input = input)}
+                    name="input"
+                    type="text"
+                    default="answer"
                 />
-            </div>
+                <button type="submit">submit</button>
+            </form>
         );
     }
 }
+
+const mapStateToProps = state => {
+    const { currentUser } = state.auth;
+    return {
+        username: state.auth.currentUser.username,
+        name: `${currentUser.firstName} ${currentUser.lastName}`,
+        qList: state.auth.currentUser.qList
+    };
+};
+
