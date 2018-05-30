@@ -1,7 +1,7 @@
 import React from 'react';
 import requiresLogin from './requires-login';
 
-export class Input extends React.Component {
+export default class Input extends React.Component {
     componentDidUpdate(prevProps) {
         if (!prevProps.meta.active && this.props.meta.active) {
             this.input.focus();

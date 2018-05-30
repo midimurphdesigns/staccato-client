@@ -42,4 +42,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default requiresLogin()(connect(mapStateToProps)(Input));
+export default (connect(mapStateToProps)(Input));
