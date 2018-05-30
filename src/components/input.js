@@ -37,3 +37,14 @@ export default class Input extends React.Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    const { currentUser } = state.auth;
+    return {
+        username: state.auth.currentUser.username,
+        name: `${currentUser.firstName} ${currentUser.lastName}`,
+        qList: state.auth.currentUser.qList
+    };
+};
+
+export default connect(mapStateToProps)(Input);
