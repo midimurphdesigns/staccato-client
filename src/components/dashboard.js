@@ -2,11 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 
-import Input from './input';
-
 export class Dashboard extends React.Component {
+    componentDidMount() {
+    }
 
     render() {
+        console.log('props', this.props);
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
@@ -16,7 +17,6 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-protected-data">
                     Question: {this.props.question}
                 </div>
-                < Input />
             </div>
         );
     }
