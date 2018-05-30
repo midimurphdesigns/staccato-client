@@ -1,4 +1,5 @@
 import React from 'react';
+import requiresLogin from './requires-login';
 
 export default class Input extends React.Component {
     componentDidUpdate(prevProps) {
@@ -47,4 +48,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(Input);
+export default requiresLogin()(connect(mapStateToProps)(Input));
