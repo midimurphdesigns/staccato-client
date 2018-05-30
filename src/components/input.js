@@ -1,5 +1,4 @@
 import React from 'react';
-import requiresLogin from './requires-login';
 
 export default class Input extends React.Component {
     componentDidUpdate(prevProps) {
