@@ -6,14 +6,15 @@ import {
 
 const initialState = {
     question: '',
-    loading: false
+    loading: false,
+    message: ''
 };
 
 export default function reducer(state = initialState, action) {
     if (action.type === FETCH_QUESTION_SUCCESS) {
         console.log('action --->', action)
         return Object.assign({}, state, {
-            question: action.question.question,
+            question: action.question,
             error: null,
             loading: false
         });

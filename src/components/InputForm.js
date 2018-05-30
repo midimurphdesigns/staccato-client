@@ -10,6 +10,11 @@ class InputForm extends React.Component {
         this.props.dispatch(fetchQuestion());
     }
 
+    formatInput(input) {
+        const newInput = input.split('').filter(el => el !=='.' && el !==' ' && el !=="'" && el !==',').join('').toLowerCase();
+        return newInput;
+    }
+
     render() {
 
         return (
@@ -18,8 +23,12 @@ class InputForm extends React.Component {
                 <form className="form-input" onSubmit={(e) => {
                     e.preventDefault();
                     //dispatch to backend...
-                    this.props.dispatch(fetchQuestion(e.target.input.value));
-                    console.log(e.target.input.value);
+                    this.props.dispatch(fetchQuestion());
+                    const userInput = this.formatInput(e.target.input.value);
+                    // match answer with user input
+                    if (this.props.question.answer === userInput) {
+                        
+                    }
                 }}>
                     <label htmlFor="input">
                         answer:

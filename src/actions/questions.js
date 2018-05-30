@@ -18,7 +18,6 @@ export const fetchQuestionRequest = question => ({
     type: FETCH_QUESTION_REQUEST
 });
 
-
 export const fetchQuestion = () => (dispatch, getState) => {
     dispatch(fetchQuestionRequest());
     const authToken = getState().auth.authToken;
@@ -31,8 +30,7 @@ export const fetchQuestion = () => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({data}) => {
-            console.log('data --->', data)
+        .then((data) => {
             dispatch(fetchQuestionSuccess(data))
         })
         .catch(err => {
