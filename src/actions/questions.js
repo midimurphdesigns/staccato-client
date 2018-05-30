@@ -19,10 +19,10 @@ export const fetchQuestionRequest = question => ({
 });
 
 
-export const fetchQuestion = (userId) => (dispatch, getState) => {
+export const fetchQuestion = () => (dispatch, getState) => {
     dispatch(fetchQuestionRequest());
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/users/next/${userId}`, {
+    return fetch(`${API_BASE_URL}/users/next`, {
         method: 'GET',
         headers: {
             // Provide our auth token as credentials
@@ -31,8 +31,53 @@ export const fetchQuestion = (userId) => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({data}) => dispatch(fetchQuestionSuccess(data)))
+        .then(({data}) => {
+            console.log('data --->', data)
+            dispatch(fetchQuestionSuccess(data))
+        })
         .catch(err => {
             dispatch(fetchQuestionError(err));
         });
 };
+
+
+// ===================
+
+
+// export const fetchNextQuestion = (userId) => (dispatch, getState) => {
+//     const authToken = getState().auth.authToken;
+//     dispatch(fetchNextQuestionRequest());
+//     return fetch(`${API_BASE_URL}/users/${userId}/next`, {
+//         method: 'GET',
+//         headers: {
+//             // Provide our auth token as credentials
+//             Authorization: `Bearer ${authToken}`
+//         }
+//     })
+//         .then(res => normalizeResponseErrors(res))
+//         .then(res => res.json())
+//         .then(({ data }) => dispatch(fetchNextQuestionSuccess(data)))
+//         .catch(err => {
+//             dispatch(fetchNextQuestionError(err));
+//         });
+// };
+
+// function fetchNextQuestionRequest() {
+//     return {
+//         type: "FETCH_NEXT_QUESTION_REQUEST",
+//     };
+// }
+
+// function fetchNextQuestionSuccess(data) {
+//     return {
+//         type: "FETCH_NEXT_QUESTION_SUCCESS",
+//         payload: data
+//     };
+// }
+
+// function fetchNextQuestionError(err) {
+//     return {
+//         type: "FETCH_NEXT_QUESTION_ERROR",
+//         payload: err
+//     };
+// }

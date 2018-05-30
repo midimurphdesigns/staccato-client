@@ -42,7 +42,7 @@ const mapStateToProps = state => {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         qList: state.auth.currentUser.qList,
-        question: state.auth.currentUser.questions[0]
+        question: state.questions.question
     };
 };
 
