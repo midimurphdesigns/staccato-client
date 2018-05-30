@@ -1,45 +1,39 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
-import requiresLogin from './requires-login';
-
-import { fetchQuestion } from '../actions/questions';
-
-class Input extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(fetchQuestion());
+export default class Input extends React.Component {
+    componentDidUpdate(prevProps) {
+        if (!prevProps.meta.active && this.props.meta.active) {
+            this.input.focus();
+        }
     }
 
     render() {
+        let error;
+        if (this.props.meta.touched && this.props.meta.error) {
+            error = <div className="form-error">{this.props.meta.error}</div>;
+        }
+
+        let warning;
+        if (this.props.meta.touched && this.props.meta.warning) {
+            warning = (
+                <div className="form-warning">{this.props.meta.warning}</div>
+            );
+        }
 
         return (
-            <form className="form-input" onSubmit={(e) => {
-                e.preventDefault();
-                //dispatch to backend...
-                this.props.dispatch(fetchQuestion(e.target.input.value));
-                console.log(e.target.input.value);
-            }}>
-                <label htmlFor="input">
-                    answer:
+            <div className="form-input">
+                <label htmlFor={this.props.input.name}>
+                    {this.props.label}
+                    {error}
+                    {warning}
                 </label>
                 <input
-                    name="input"
-                    type="text"
-                    default="answer"
+                    {...this.props.input}
+                    id={this.props.input.name}
+                    type={this.props.type}
+                    ref={input => (this.input = input)}
                 />
-                <button type="submit">submit</button>
-            </form>
+            </div>
         );
     }
 }
-
-const mapStateToProps = state => {
-    const { currentUser } = state.auth;
-    return {
-        username: state.auth.currentUser.username,
-        name: `${currentUser.firstName} ${currentUser.lastName}`,
-        qList: state.auth.currentUser.qList
-    };
-};
-
-export default requiresLogin()(connect(mapStateToProps)(Input));
