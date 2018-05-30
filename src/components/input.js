@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+import requiresLogin from './requires-login';
+
 import { fetchQuestion } from '../actions/questions';
 
 class Input extends React.Component {
@@ -17,9 +20,7 @@ class Input extends React.Component {
                 console.log(e.target.input.value);
             }}>
                 <label htmlFor="input">
-                    {this.props.label}
-                    {error}
-                    {warning}
+                    answer:
                 </label>
                 <input
                     name="input"
@@ -41,3 +42,4 @@ const mapStateToProps = state => {
     };
 };
 
+export default requiresLogin()(connect(mapStateToProps)(Input));

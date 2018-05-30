@@ -2,7 +2,7 @@ import {
     FETCH_QUESTION_SUCCESS,
     FETCH_QUESTION_ERROR,
     FETCH_QUESTION_REQUEST
-} from '../actions/protected-data';
+} from '../actions/questions';
 
 const initialState = {
     question: '',
