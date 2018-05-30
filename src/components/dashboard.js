@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 
+import InputForm from './InputForm'
+
 export class Dashboard extends React.Component {
     componentDidMount() {
     }
@@ -15,7 +17,7 @@ export class Dashboard extends React.Component {
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
                 <div className="dashboard-protected-data">
-                    Question: {this.props.question}
+                    <InputForm />
                 </div>
             </div>
         );
@@ -24,6 +26,7 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
     const { currentUser } = state.auth;
+    console.log('current user --->', currentUser)
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
