@@ -29,11 +29,11 @@ class InputForm extends React.Component {
                     const userInput = this.formatInput(e.target.input.value);
                     if (this.props.question.answer === userInput) {
                         this.props.dispatch(displayCorrectSuccess(this.props.question.answer));
-                        this.props.dispatch(fetchQuestion(true));
+                        {/* this.props.dispatch(fetchQuestion(true)); */}
                     }
                     else {
                         this.props.dispatch(displayIncorrectSuccess(this.props.question.answer));
-                        this.props.dispatch(fetchQuestion(false));
+                        {/* this.props.dispatch(fetchQuestion(false)); */}
                     }
                 }}>
                     <label htmlFor="input">

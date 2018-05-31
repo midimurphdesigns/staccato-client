@@ -11,7 +11,8 @@ import {
 const initialState = {
     question: '',
     loading: false,
-    message: '',
+    displayCorrect: false,
+    displayIncorrect: false,
     history: {qTotal: 0, qCorrect: 0}
 };
 
@@ -21,7 +22,9 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
             question: action.question,
             error: null,
-            loading: false
+            loading: false,
+            displayCorrect: false,
+            displayIncorrect: false
         });
     } else if (action.type === FETCH_QUESTION_ERROR) {
         return Object.assign({}, state, {
@@ -49,14 +52,16 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
             loading: false,
             answer: action.answer,
-            message: 'Correct!'
+            displayCorrect: true,
+            displayIncorrect: false,
         });
     }
     else if (action.type === DISPLAY_INCORRECT_SUCCESS) {
         return Object.assign({}, state, {
             loading: false,
             answer: action.answer,
-            message: 'Sorry, try again'
+            displayCorrect: false,
+            displayIncorrect: true
         });
     }
     return state;

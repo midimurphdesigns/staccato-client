@@ -2,9 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 
-import { Message } from 'semantic-ui-react'
-import InputForm from './InputForm'
-import './dashboard.css'
+import { Message } from 'semantic-ui-react';
+import InputForm from './InputForm';
+import Correct from './Correct';
+import Incorrect from './Incorrect';
+import './dashboard.css';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
@@ -12,19 +14,46 @@ export class Dashboard extends React.Component {
 
     render() {
         console.log('props', this.props);
-        return (
-            <div className="dashboard row">
-                <div className="question-answer">
-                    <Message
-                        floating
-                        className="question-card"
-                    >
-                        <InputForm />
-                    </Message>
-
+        if (this.props.displayCorrect && !this.props.displayIncorrect) {
+            return (
+                <div className="dashboard row">
+                    <div className="question-answer">
+                        <Message
+                            floating
+                            className="question-card"
+                        >
+                            <Correct />
+                        </Message>
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        } else if (this.props.displayIncorrect && !this.props.displayCorrect) {
+            return (
+                <div className="dashboard row">
+                    <div className="question-answer">
+                        <Message
+                            floating
+                            className="question-card"
+                        >
+                            <Incorrect />
+                        </Message>
+                    </div>
+                </div>
+            );
+        } else if (!this.props.displayIncorrect && !this.props.displayCorrect) {
+            return (
+                <div className="dashboard row">
+                    <div className="question-answer">
+                        <Message
+                            floating
+                            className="question-card"
+                        >
+                            <InputForm />
+                        </Message>
+                    </div>
+                </div>
+            );
+        }
     }
 }
 
@@ -36,7 +65,9 @@ const mapStateToProps = state => {
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         qList: state.auth.currentUser.qList,
         currentUser: state.auth.currentUser.id,
-        question: state.questions.question
+        question: state.questions.question,
+        displayCorrect: state.questions.displayCorrect,
+        displayIncorrect: state.questions.displayIncorrect
     };
 };
 
