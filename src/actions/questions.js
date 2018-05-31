@@ -18,15 +18,18 @@ export const fetchQuestionRequest = question => ({
     type: FETCH_QUESTION_REQUEST
 });
 
-export const fetchQuestion = () => (dispatch, getState) => {
+export const fetchQuestion = (userInput) => (dispatch, getState) => {
     dispatch(fetchQuestionRequest());
     const authToken = getState().auth.authToken;
+    console.log('FETCH USER INPUT', userInput)
     return fetch(`${API_BASE_URL}/users/next`, {
-        method: 'GET',
+        method: 'POST',
         headers: {
             // Provide our auth token as credentials
-            Authorization: `Bearer ${authToken}`
-        }
+            Authorization: `Bearer ${authToken}`,
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({userInput})
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
