@@ -14,14 +14,29 @@ export class Dashboard extends React.Component {
         console.log('props', this.props);
         return (
             <div className="dashboard row">
+<<<<<<< HEAD
+=======
+                <div className="dashboard-username">
+                    Username: {this.props.username}
+                </div>
+                <div className="dashboard-name">Name: {this.props.name}</div>
+>>>>>>> a9378c4e7279c3919504367e3b5625e5424de718
                 <div className="question-answer">
                     <Message
                         floating
                         className="question-card"
+<<<<<<< HEAD
                     >
                         <InputForm />
                     </Message>
 
+=======
+                        // content={this.props.question.question}
+                    >
+                    <InputForm />
+                    </Message>
+                    
+>>>>>>> a9378c4e7279c3919504367e3b5625e5424de718
                 </div>
             </div>
         );
