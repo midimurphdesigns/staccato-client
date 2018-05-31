@@ -23,11 +23,11 @@ class InputForm extends React.Component {
                 <form className="form-input" onSubmit={(e) => {
                     e.preventDefault();
                     //dispatch to backend...
-                    this.props.dispatch(fetchQuestion());
                     const userInput = this.formatInput(e.target.input.value);
+                    this.props.dispatch(fetchQuestion(false));
                     // match answer with user input
                     if (this.props.question.answer === userInput) {
-                        
+                        this.props.dispatch(fetchQuestion(true));
                     }
                 }}>
                     <label htmlFor="input">
