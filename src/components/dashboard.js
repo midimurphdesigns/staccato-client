@@ -2,7 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 
+import { Message } from 'semantic-ui-react'
 import InputForm from './InputForm'
+import './dashboard.css'
 
 export class Dashboard extends React.Component {
     componentDidMount() {
@@ -11,13 +13,20 @@ export class Dashboard extends React.Component {
     render() {
         console.log('props', this.props);
         return (
-            <div className="dashboard">
+            <div className="dashboard row">
                 <div className="dashboard-username">
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
-                <div className="dashboard-protected-data">
+                <div className="question-answer">
+                    <Message
+                        floating
+                        className="question-card"
+                        // content={this.props.question.question}
+                    >
                     <InputForm />
+                    </Message>
+                    
                 </div>
             </div>
         );

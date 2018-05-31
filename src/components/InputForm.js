@@ -19,7 +19,11 @@ class InputForm extends React.Component {
 
         return (
             <div className="container">
-                <span className="question">{this.props.question.question}</span>
+                <div className="answer-status">
+                    <label className="q-correct">Questions correct: {this.props.currentUser.qCorrect}</label>
+                    <label className="q-total">Questions answered: {this.props.currentUser.qTotal}</label>
+                </div>
+                <label className="question">{this.props.question.question}</label>
                 <form className="form-input" onSubmit={(e) => {
                     e.preventDefault();
                     //dispatch to backend...
@@ -31,14 +35,15 @@ class InputForm extends React.Component {
                     }
                 }}>
                     <label htmlFor="input">
-                        answer:
                 </label>
                     <input
                         name="input"
                         type="text"
                         default="answer"
+                        placeholder="Answer..."
+                        className="answer"
                     />
-                    <button type="submit">submit</button>
+                    <button type="submit" className="submit-button">submit</button>
                 </form>
             </div>
         );
@@ -51,7 +56,8 @@ const mapStateToProps = state => {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         qList: state.auth.currentUser.qList,
-        question: state.questions.question
+        question: state.questions.question,
+        currentUser: state.auth.currentUser
     };
 };
 
