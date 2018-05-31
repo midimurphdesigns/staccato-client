@@ -1,0 +1,45 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 1600px;
+  margin: auto;
+}
+
+.question-answer {
+  width: 800px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.question-card {
+  text-align: center;
+}
+
+.dashboard-username, .dashboard-name {
+  font-size: 30px;
+  line-height: 1em;
+  padding: 10px;
+}
+
+.question {
+  display: block;
+  font-size: 40px;
+  margin: 50px;
+}
+
+.answer {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  margin-bottom: 50px;
+}
+
+.q-correct, .q-total {
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+}
