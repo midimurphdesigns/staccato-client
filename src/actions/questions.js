@@ -22,7 +22,7 @@ export const fetchQuestion = () => (dispatch, getState) => {
     dispatch(fetchQuestionRequest());
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/users/next`, {
-        method: 'GET',
+        method: 'POST',
         headers: {
             // Provide our auth token as credentials
             Authorization: `Bearer ${authToken}`
