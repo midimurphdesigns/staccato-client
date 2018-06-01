@@ -1,5 +1,74 @@
-.home {
+/* html { 
+  background: url(../images/bg1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
 
+.bg {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url(../images/bg1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: -1;
+  position: fixed;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+}
+
+.color {
+  height: 150px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+
+.home {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 100px;
+}
+
+.opaque {
+  display: relative;
+  opacity: 1;
+}
+
+.registration {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100vw;
+  margin: auto;
+}
+
+.registration-card {
+  width: 50vw;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.registration-button {
+  width: 150px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.field {
+  text-align: center;
 }
 
 .title-section {
@@ -11,13 +80,49 @@
   flex-direction: row;
 }
 
-.login {
-  display: flex;
-  justify-content: center;
+.login-form {
+  padding: 20px;
+}
 
+.login-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.login-button {
+  margin-top: 20px;
+}
+
+.register-message {
+  text-align: center;
+}
+
+.title {
+  border-bottom: 2px solid black;
+  width: 250px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 56px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+h4 {
+  font-size: 22px;
 }
 
 .info-section {
+  width: 100vw;
   padding-top: 100px;
   margin: auto;
 }
@@ -25,9 +130,11 @@
 .info-block {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   text-align: center;
+  height: 300px;
+  font-size: 26px;
   padding: 20px;
+  padding-top: 130px;
 }
 
 .center-info-block {

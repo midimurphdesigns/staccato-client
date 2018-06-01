@@ -7,11 +7,6 @@ import { fetchQuestion, displayCorrectSuccess, displayIncorrectSuccess } from '.
 
 class Correct extends React.Component {
 
-    formatInput(input) {
-        const newInput = input.split('').filter(el => el !== '.' && el !== ' ' && el !== "'" && el !== ',').join('').toLowerCase();
-        return newInput;
-    }
-
     render() {
         console.log(this.props.history);
         return (

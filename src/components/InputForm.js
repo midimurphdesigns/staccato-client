@@ -11,7 +11,7 @@ class InputForm extends React.Component {
     }
 
     formatInput(input) {
-        const newInput = input.split('').filter(el => el !=='.' && el !==' ' && el !=="'" && el !==',').join('').toLowerCase();
+        const newInput = input.split('').filter(el => el !== '.' && el !== ' ' && el !== "'" && el !== ',').join('').toLowerCase();
         return newInput;
     }
 
@@ -29,16 +29,15 @@ class InputForm extends React.Component {
                     const userInput = this.formatInput(e.target.input.value);
                     if (this.props.question.answer === userInput) {
                         this.props.dispatch(displayCorrectSuccess(this.props.question.answer));
-                        {/* this.props.dispatch(fetchQuestion(true)); */}
                     }
                     else {
                         this.props.dispatch(displayIncorrectSuccess(this.props.question.answer));
-                        {/* this.props.dispatch(fetchQuestion(false)); */}
                     }
                 }}>
                     <label htmlFor="input">
-                </label>
+                    </label>
                     <input
+                        className="field"
                         name="input"
                         type="text"
                         default="answer"
