@@ -14,6 +14,7 @@ export function RegistrationPage(props) {
     }
     return (
         <div className="registration">
+            <div className="bg2"></div>
             <div className="registration-card">
                 <Message floating>
                     <h2 className="registration-title">Register for Staccato</h2>

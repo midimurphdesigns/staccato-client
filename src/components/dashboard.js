@@ -13,15 +13,12 @@ export class Dashboard extends React.Component {
     }
 
     render() {
-        console.log('props', this.props);
         if (this.props.displayCorrect && !this.props.displayIncorrect) {
             return (
-                <div className="dashboard row">
+                <div className="dashboard">
+                    <div className="bg2"></div>
                     <div className="question-answer">
-                        <Message
-                            floating
-                            className="question-card"
-                        >
+                        <Message floating className="question-card">
                             <Correct />
                         </Message>
                     </div>
@@ -29,12 +26,10 @@ export class Dashboard extends React.Component {
             );
         } else if (this.props.displayIncorrect && !this.props.displayCorrect) {
             return (
-                <div className="dashboard row">
+                <div className="dashboard">
+                    <div className="bg2"></div>
                     <div className="question-answer">
-                        <Message
-                            floating
-                            className="question-card"
-                        >
+                        <Message floating className="question-card">
                             <Incorrect />
                         </Message>
                     </div>
@@ -42,12 +37,10 @@ export class Dashboard extends React.Component {
             );
         } else if (!this.props.displayIncorrect && !this.props.displayCorrect) {
             return (
-                <div className="dashboard row">
+                <div className="dashboard">
+                    <div className="bg2"></div>
                     <div className="question-answer">
-                        <Message
-                            floating
-                            className="question-card"
-                        >
+                        <Message floating className="question-card">
                             <InputForm />
                         </Message>
                     </div>
