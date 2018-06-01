@@ -45,7 +45,6 @@ export const fetchQuestion = (userInput=3) => (dispatch, getState) => {
     dispatch(fetchQuestionRequest());
     const authToken = getState().auth.authToken;
     if (userInput === 3) {
-        console.log('FETCH USER INPUT', userInput)
         return fetch(`${API_BASE_URL}/users/first`, {
             method: 'GET',
             headers: {

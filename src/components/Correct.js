@@ -8,7 +8,6 @@ import { fetchQuestion, displayCorrectSuccess, displayIncorrectSuccess } from '.
 class Correct extends React.Component {
 
     render() {
-        console.log(this.props.history);
         return (
             <div className="container">
                 <div className="answer-status">
