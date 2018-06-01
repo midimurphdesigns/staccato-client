@@ -3,7 +3,6 @@
   flex-direction: column;
   text-align: center;
   width: 100vw;
-  /* margin: auto; */
 }
 
 .question-answer {
@@ -29,6 +28,21 @@
   margin: 50px;
 }
 
+.response-section {
+  padding: 20px;
+}
+
+.correct-response {
+  color: green;
+  font-size: 18px;
+}
+
+.incorrect-response {
+  color: red;
+  font-size: 18px;
+}
+
+
 .answer {
   display: block;
   margin: auto;
@@ -43,4 +57,24 @@
   display: flex;
   flex-direction: row;
   font-size: 18px;
+}
+
+/* =====RESPONSIVE MEDIA QUERIES===== */
+
+@media only screen and (max-width: 850px) {
+
+  .question-answer {
+    width: 90vw;
+    margin-top: 150px;
+    margin-bottom: 150px;
+  }
+
+  .question {
+    width: 100%;
+    margin: auto;
+    padding: 40px 0px;
+    font-size: 22px;
+  }
+
+
 }

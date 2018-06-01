@@ -29,3 +29,21 @@
   padding: 10px;
   margin-right: 20px;
 }
+
+@media only screen and (max-width: 850px) {
+
+  .header-bar, .logout-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+  .logout-button {
+    margin-top: 10px;
+  }
+  .header-username, .header-name {
+    font-size: 18px;
+    padding: 10px;
+    margin-right: 0px;
+  }
+}

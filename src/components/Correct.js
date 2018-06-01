@@ -16,8 +16,8 @@ class Correct extends React.Component {
                     <label className="q-total">Questions answered: {this.props.history.qTotal}</label>
                 </div>
                 <label className="question">{this.props.question.question}</label>
-                <section className="response">
-                    <label>Your answer was correct!</label>
+                <section className="response-section">
+                    <label className="correct-response">Your answer was correct!</label>
                 </section>
                 <button onClick={ () => {
                     return this.props.dispatch(fetchQuestion(this.props.displayCorrect))

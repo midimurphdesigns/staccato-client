@@ -19,7 +19,8 @@ export function RegistrationPage(props) {
                 <Message floating>
                     <h2 className="registration-title">Register for Staccato</h2>
                     <RegistrationForm className="registration-form" />
-                    <span>Already have an account? </span><Link to="/" className="login-link">Login</Link>
+                    <span className="register-link">Already have an account? </span>
+                    <Link to="/" className="login-link" className="register-link">Login</Link>
                 </Message>
             </div>
         </div>

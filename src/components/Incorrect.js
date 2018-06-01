@@ -16,8 +16,8 @@ class Incorrect extends React.Component {
           <label className="q-total">Questions answered: {this.props.history.qTotal}</label>
         </div>
         <label className="question">{this.props.question.question}</label>
-        <section className="response">
-          <label>Sorry, your answer was incorrect...</label>
+        <section className="response-section">
+          <label className="incorrect-response">Sorry, your answer was incorrect...</label>
         </section>
         <button onClick={() => {
           return this.props.dispatch(fetchQuestion(this.props.displayCorrect))
