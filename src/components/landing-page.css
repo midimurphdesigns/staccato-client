@@ -129,6 +129,24 @@ h4 {
   padding: 20px;
 }
 
+.section-container {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.form-container {
+  width: 70%;
+}
+
+.demo-account {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+}
+
 /* 
 .center-info-block {
   border-left: 2px solid black;
