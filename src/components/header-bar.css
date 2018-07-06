@@ -18,6 +18,10 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
+.logout-button:hover {
+  cursor: pointer;
+}
+
 .logo {
   font-family: 'Ubuntu', sans-serif;
   font-size: 40px;

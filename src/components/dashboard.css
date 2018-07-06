@@ -53,6 +53,10 @@
   margin-bottom: 50px;
 }
 
+.submit-button:hover {
+  cursor: pointer;
+}
+
 .q-correct, .q-total {
   display: flex;
   flex-direction: row;
