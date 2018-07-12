@@ -5,7 +5,6 @@
 ### Live App
 
 live URL: https://staccato-music-theory.netlify.com/<br/>
-server URL: https://staccato-music-theory.herokuapp.com/<br/>
 presentation URL: https://docs.google.com/presentation/d/1Hh_dexhUuFX-mGzv-waDD4nG3XkVoRf3HIys4eyZoHQ/edit#slide=id.g35f391192_00
 
 ### About this app
