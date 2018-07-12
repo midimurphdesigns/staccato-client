@@ -11,11 +11,12 @@ technology used:
 -Express
 -CSS
 
-live URL: https://staccato-music-theory.netlify.com/  
-server URL: https://staccato-music-theory.herokuapp.com/  
+live URL: https://staccato-music-theory.netlify.com/<br/>
+server URL: https://staccato-music-theory.herokuapp.com/<br/>
 presentation URL: https://docs.google.com/presentation/d/1Hh_dexhUuFX-mGzv-waDD4nG3XkVoRf3HIys4eyZoHQ/edit#slide=id.g35f391192_00
 
 # Staccato music theory learning app
+
 # By Jacob Zimmerman and Kevin Murphy
 
 ### Live App
@@ -30,21 +31,23 @@ This app is for anyone trying to learn the basics of music theory. It suggests q
 
 ### Screencaps
 
-![alt text](./screencaps/screencap-1.jpg "Screencap of app")  
-![alt text](./screencaps/screencap-2.jpg "Screencap of app")  
-![alt text](./screencaps/screencap-3.jpg "Screencap of app")  
+![alt text](./screencaps/screencap-1.jpg "Screencap of app")
+![alt text](./screencaps/screencap-2.jpg "Screencap of app")
+![alt text](./screencaps/screencap-3.jpg "Screencap of app")
 
 ## Minimum Viable Product (MVP)
-* Clear and fluid onboarding page that helps guide UX
-* Signup
-* Login
-* A clear logout procedure
-* Algorithm used to suggest questions based on what the user gets wrong
-* Mobile responsive layout
-* Persistance of data
-* Effective implementation of user authentication
+
+- Clear and fluid onboarding page that helps guide UX
+- Signup
+- Login
+- A clear logout procedure
+- Algorithm used to suggest questions based on what the user gets wrong
+- Mobile responsive layout
+- Persistance of data
+- Effective implementation of user authentication
 
 ## How it was built
+
 This app was built using a MERN stack
 *React
 *Redux
