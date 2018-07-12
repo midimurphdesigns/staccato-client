@@ -1,6 +1,6 @@
 # Staccato music theory learning app
 
-# By Jacob Zimmerman and Kevin Murphy
+By Jacob Zimmerman and Kevin Murphy
 
 ### Live App
 
