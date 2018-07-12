@@ -1,7 +1,7 @@
 Staccato music theory learning app
 By Jacob Zimmerman and Kevin Murphy
 
-This app is for anyone trying to learn the basics of music theory. It suggests questions based upon a spaced algorithm to help you focus on information you find difficult. We came about this idea based on both of our own experience learning music theory and decided to make an app to help others.
+This app is for anyone trying to learn the basics of music theory. It suggests questions based upon a spaced repetition algorithm to help you focus on information you find difficult. We came about this idea based on both of our own experience learning music theory and decided to make an app to help others.
 
 technology used:
 -React
