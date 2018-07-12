@@ -31,11 +31,11 @@ This app is for anyone trying to learn the basics of music theory. It suggests q
 ## How it was built
 
 This app was built using a MERN stack
-*React
-*Redux
-*MongoDB
-*Node
-*Express
-*CSS
+- React
+- Redux
+- MongoDB
+- Node
+- Express
+- CSS
 
 The design is intended to allow for fluid UX while staying simple to highlight app development rather than graphic design.
